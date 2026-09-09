@@ -1,70 +1,112 @@
-/*
- * @Author: Lin
- * @Date: 2019-11-13 22:42:18
- * @LastEditTime: 2019-12-07 11:34:49
- * @Description: 修改原简历内容
- * @FilePath: \resume\config\render\section.js
- */
 /**
  * 对文段的一个简单封装
  */
 const p = (left = '', right = '') => {
   return { left, right }
 }
-/**
- * header
- * 默认将内容转为h4
- */
-const h = (left = '', right = '') => {
-  return { left: `#### ${left}`, right: `#### ${right}` }
-}
 
 /**
  * 正文部分
- * 说明：本模版在pc端和打印端采用两栏式显示，手机端采用单栏
- * 请自己判断并适应页面尺寸
  */
 export default [
-  /**
-   * 每一个小模块，都有以下几个配置项：
-   * title： 顶部名称栏
-   * content: 里面的内容，需要注意的是每一条内容都会换行
-   */
   {
     title: '实践经历',
     content: [
-      /**
-       * 文章正文部分
-       * left, right: 需要显示的文字，支持 b, i, a 等html标签以及一切markdown文本，请自由配置
-       */
-
       p(
-        `**重庆邮电大学 · 红岩网校工作站** [Link](https://redrock.team/aboutus/)`,
-        `2018.8 - 2020.6`
+        `**重庆邮电大学 · 红岩网校工作站**`,
+        `2025.9 - 至今`
       ),
       p(
-        `隶属校团委的学生互联网组织，成立于2000年，共有成员70余人，拥有 PRD-UI-前后端开发-运营-迭代的完整开发流程。`
+        `<small>隶属校团委的学生互联网组织，成立于2000年，成员70余人，具备 PRD-UI-前后端开发-运营-迭代完整开发流程。</small>`
       ),
-      p(`*红岩网校工作站 · Web研发部干事<small>（2018.8 - 2019.6）</small>* `),
-      p(`*红岩网校工作站 · 站长<small>（2019.6 - 2020.6）</small>* `),
+      p(`目前担任Web研发部24级负责人`),
+      p(),
       p(
-        `曾主持开发了网校若干前端项目，参与上线维护、代码重构、项目迁移/部署。`
-      ),
-      p(
-        `着力推动部门内开发流程优化与协作规范，促成了内部 matono、Sentry、前端 CI/CD 等平台的搭建以及飞书、蓝湖等团队协作平台的接入。`
-      ),
-      p(`**北京字节跳动科技有限公司 · Enterprise Application**`),
-      p(
-        `*Enterprise Application · 前端开发实习生<small>（2020.2 - 2020.8）</small>*`
+        `**苏州语灵人工智能科技有限公司 · Dify 前端部门**`,
+        `2026.1.27 - 至今`
       ),
       p(
-        `参与内部aPaas产品的开发工作，致力于为公司内中后台业务场景提供简单应用搭建方案。`
+        `<small>参与 Dify Enterprise 企业级 LLMOps 平台前端开发，重点涉及 Agent 应用、权限管理、工作空间管理和用量管控等模块。</small>`
       ),
       p(
-        `面向中后台复杂场景，我参考[Formily](https://formilyjs.org/#/bdCRC5/dzUZU8il)等表单解决方案，改进原有的JSON Schema方案，为复杂表单联动提供统一协议，实现联动的定制化。`
+        `<small>技术栈：Next.js、React、TypeScript、Radix UI、Tailwind CSS、TanStack Query、React Hook Form、Zod、Zustand、i18next。</small>`
       ),
       p(
-        `使用VSCode核心组件monaco-editor完成浏览器中的线上代码编辑器开发，完善了产品的low code开发能力。`
+        `<small>- 独立开发 RBAC 权限体系，实现树形权限配置界面与通用组件，支持多资源的差异化权限控制。</small>`
+      ),
+      p(
+        `<small>- 独立开发用量管控中的资源组管理功能，实现配额、限速等可视化配置；参与工作空间管理相关功能开发。</small>`
+      ),
+      p(
+        `<small>- 参与组件与工程化治理，包括组件维护、国际化规范、ESLint 与 Husky 配置、Context 拆分、类型治理和模块边界整理。</small>`
+      ),
+      p(
+        `<small>- 参与 Agent 应用前端开发，参与 Human Input、RAG 等模块的交互与功能落地，熟悉 Agent 工作流中输入处理、知识检索和结果展示等前端场景。</small>`
+      ),
+      p(
+        `<small>- 参与 Console 首屏性能优化，将 LCP 从约 1300ms 优化至 500ms 左右。</small>`
+      ),
+      p(
+        `<small>- 积极认领社区 Issue，完成 Bug 修复与功能优化</small>`
+      ),
+      p(`<small>开源地址：https://github.com/langgenius/dify</small>`),
+      p(
+        `<small></small>`
+      ),
+    ],
+  },
+  {
+    title: '个人作品',
+    content: [
+      p(
+        `<small>**个人主页**（www.smob.cc）| Next.js + TS + Tailwind CSS + Sass，rem 多端适配，丰富交互设计。</small>`
+      ),
+      p(
+        `<small>**个人博客**（blog.smob.cc）| Next.js + TS + Tailwind CSS，多端适配，日常随笔记录。</small>`
+      ),
+      p(
+        `<small>**掌上重邮课程表 Demo** | React + Sass + Zustand，数据 Mock，良好的移动端适配，功能完善。</small>`
+      ),
+    ],
+  },
+  {
+    title: '项目经历',
+    content: [
+      p(
+        `**重邮帮（校团委官方微信小程序）**`,
+        `2025.7 - 2026.7`
+      ),
+      p(
+        `<small>- 负责抢票、身份管理、场地申请等模块的功能迭代与问题修复。</small>`
+      ),
+      p(
+        `<small>- 使用 Recoil 构建跨分包全局状态管理，处理状态共享与双角色权限切换场景。</small>`
+      ),
+      p(
+        `<small>- 通过分包加载和组件按需加载控制主包体积在 2MB 以内，并改善首屏加载体验。</small>`
+      ),
+      p(
+        `<small>- 建立 TypeScript 类型约束和代码规范，重构复杂业务逻辑，提升模块可维护性。</small>`
+      ),
+      p(),
+      p(
+        `**数据中台（红岩网校数据分析可视化平台）**`,
+        `2025.7 - 2026.7`
+      ),
+      p(
+        `<small>技术栈：React + vite + TypeScript + tailwindcss + SWR + ECharts</small>`
+      ),
+      p(
+        `<small>- 开发项目指标追踪、多维度数据对比和可视化看板功能。</small>`
+      ),
+      p(
+        `<small>- 基于 Ant Design Form 实现多条件、级联和时间范围筛选，通过状态管理支持时间与数据双对比模式。</small>`
+      ),
+      p(
+        `<small>- 使用 SWR 管理数据请求与缓存，封装支持交互和窗口自适应的 ECharts 图表组件，并通过 Ref 优化图表渲染。</small>`
+      ),
+      p(
+        `<small>- 使用 Tailwind CSS 原子化样式与自定义工具类，保持页面样式一致性。</small>`
       ),
     ],
   },
@@ -72,72 +114,25 @@ export default [
     title: '个人能力',
     content: [
       p(
-        `- *熟练掌握基本技能。* 熟悉 HTML5、CSS3、ES6+、响应式布局等，会基本的数据结构与算法。`
+        `- *技术栈：* HTML5、CSS3、JavaScript（ES6+）、React、Vue、TypeScript、Next.js。`
       ),
       p(
-        '- *简单了解并实践过前端工程化。* 使用 Webpack 搭建过前端开发环境、写过简单的前端自动化脚本。使用 ESLint、Prettier 进行代码格式化。使用过 CSS 预处理语言。'
+        `<small>- *工程化：* 使用 Webpack、Vite、ESLint、Prettier、Husky、lint-staged、Git、Docker 和 CI/CD 工具，具备代码规范、版本管理和基础部署实践。</small>`
       ),
       p(
-        '- *了解基本的代码调试、优化、前端安全。* 使用过异常监测工具、会使用 Chrome devTools 的基本功能、做过代理抓包调试、进行过代码优化。了解常见的前端安全隐患及防备措施。'
+        `<small>- *业务开发：* 具备组件抽象、复杂表单、状态管理、权限控制、国际化和数据可视化开发经验。</small>`
       ),
       p(
-        '- *简单了解后端的基础知识。* 知道 HTTP(S) 协议、DNS 解析相关基础知识，使用过 CDN 服务。写过简单的 NodeJS Server，写过入门级的 Shell 脚本、配置过简单的 Nginx 服务器。'
+        `<small>- *调试与基础知识：* 熟悉 Chrome DevTools 基本调试流程，了解 HTTP(S)、DNS、常见前端安全风险及基础性能优化方法。</small>`
       ),
       p(
-        '- *简单了解当下热门的框架。* 简单了解 MV* 框架，简单了解 Vue 的基础知识和部分原理。'
+        `<small>- *服务端协作：* 了解 Node.js、Go 和 Nginx 的基础使用，可配合完成接口联调与基础部署配置。</small>`
       ),
       p(
-        '- *奖项证书：* 国家级奖学金一次、校级奖学金一次；微信小程序应用开发赛（小游戏类别）全国三等奖'
+        `<small>- *AI 辅助开发：* 使用 Claude、Codex 等工具辅助代码检索、问题定位和文档整理，并对输出结果进行验证。</small>`
       ),
       p(
-        `- *人事管理：* 管理过校内70余人的互联网团队。负责部门内人事调度，项目分配，项目进度跟踪，召开周会，学员培训，服务器维护等工作。`
-      ),
-    ],
-  },
-  {
-    title: '个人作品',
-    content: [
-      h(`个人主页`),
-      p(
-        `以[nalgd.top](https://nalgd.top)作为个人域名，使用 rem + 仿 flexible.js 完成多端适配，iconfont 完成小图标制作。`
-      ),
-      h(`个人博客`),
-      p(
-        `折腾过WordPress、Jekyll，也尝试自己制作，最终选用 hexo 驱动，作为日常随笔记录，随性更新。`
-      ),
-      h(`“独帅闯将营” · 微信小游戏`),
-      p(
-        `一款以中国象棋文化为背景的微信跑酷类小游戏，基于 LayaAir3D 引擎 + TypeScript 开发，仅为尝试 Web 技术在游戏开发方面的应用，以学习为主要目的，获得微信小程序应用开发赛（小游戏类别）全国三等奖。`
-      ),
-    ],
-  },
-  {
-    title: '项目经历',
-    content: [
-      p(`**重邮小帮手(校团委官方微信服务号)**`),
-      p(`校内学生关注率第一(90%+)的公众号`),
-      p(
-        `主管功能开发及人员调配，主持使用 Vue.js + ElementUI 重构内部公众号后台管理系统。`
-      ),
-      p(`重构公众号内嵌四六级成绩查询功能，增加准考证信息自动识别 。`),
-      p(`重构公众号内嵌课表查询功能，完成与掌上重邮 APP 的数据共通。`),
-      p(`**“青春邮约”微信小程序**`),
-      p(`校级组织线上报名系统`),
-      p(
-        `为同时在 QQ/微信端运行，整个项目借助 Taro 在原基础上重新构建，考虑到数据复杂度不高，使用 Context 进行数据管理。针对组织内部人员，使用 Ant Design 搭建后台页面，借助公众号/腾讯云短信业务进行录取信息推送。`
-      ),
-      p(`*上线两天内 PV 27000+*`),
-      p(`**重邮新生专题网**`, `[Source](https://wx.redrock.team/game/welcome2018/#/)`),
-      p(`帮助新生快速了解校园的专题网站`),
-      p(`此项目一年一版、拥有完整开发流程，我负责 2018 版 PC 端，也是做过的第一个完整项目，借助 git 和他人合作开发，使用了很多 CSS3 的特性。`),
-      p(`*上线一月内 UV 6k+，PV 2w+。*`),
-      p(`**重庆邮电大学“网址大全”**`, `[Source](https://wx.redrock.team/web/)`),
-      p(`服务于校内师生的内网一站式导航平台`),
-      p(
-        `刚接触 Vue 不久时完成，实现了根据配置文件动态生成站点内容。在项目实践中自己设计了一套简单的轮播图组件。`
-      ),
-      p(
-        `未借助中后台框架独立完成配套后台管理页面的搭建，实践了大量数据结构知识。`
+        `<small>- *协作能力：* 具备需求理解、问题排查和团队协作经验，注重代码规范与可维护性。</small>`
       ),
     ],
   },
