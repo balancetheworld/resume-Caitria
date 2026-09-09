@@ -10,6 +10,7 @@ const dayjs = require('dayjs')
 
 module.exports = {
   mode: 'universal',
+  target: 'static',
   /*
    ** Headers of the page
    */
